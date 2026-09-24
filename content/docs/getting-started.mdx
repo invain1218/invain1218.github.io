@@ -1,0 +1,54 @@
+---
+title: 开始使用
+description: 如何本地运行、部署，以及项目结构。
+date: 2026-01-15
+tags: ["指南", "Next.js"]
+---
+
+## 本地运行
+
+需要 Node.js 18+（推荐 20+）。首次克隆后：
+
+```bash
+npm install
+npm run dev
+```
+
+打开 [http://localhost:3000](http://localhost:3000)。
+
+## 构建与部署
+
+```bash
+npm run build   # 生成静态产物
+npm run start   # 预览生产版本
+```
+
+部署到 Vercel 直接导入仓库即可；或 `npm run build` 后部署到任意静态托管。
+
+## 项目结构
+
+```
+src/
+├── app/
+│   ├── page.tsx           # 首页：Hero → Research → Work → Notes → About
+│   ├── layout.tsx         # 全局布局（导航 + 页脚）
+│   ├── globals.css        # ★ 设计 token
+│   └── docs/              # 文档区（MDX）
+├── components/            # 可复用组件
+└── lib/
+    ├── site.ts            # ★ 站点身份（名字 / 简介 / 社交）
+    ├── content.ts         # ★ 首页内容（研究方向 / 项目）
+    └── docs.ts            # 文档读取
+content/
+└── docs/*.mdx             # ★ Markdown 文档
+```
+
+## 内容放在哪
+
+- **站点身份**：`src/lib/site.ts`。
+- **首页内容**（研究方向 / 项目 / 关于）：`src/lib/content.ts`。
+- **文档**：在 `content/docs/` 新增 `.mdx`（见「如何新增文档」）。
+
+## 设计规范
+
+颜色、字体层级、间距、断点见「设计系统」文档，全站保持一致。

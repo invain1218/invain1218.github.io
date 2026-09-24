@@ -1,0 +1,93 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* ============================================================
+   Design tokens — Editorial / Technical / Minimal
+   ------------------------------------------------------------
+   - off-white paper background, near-black ink, single accent
+   - mono font for labels / numbers / meta (scientific-notebook feel)
+   - sharp edges (no pill/card rounding), generous whitespace
+   ============================================================ */
+
+@theme {
+  /* color */
+  --color-accent: #2452e3; /* electric blue — links / labels / numbers only */
+  --color-accent-soft: #eef2ff;
+  --color-ink: #141414;
+  --color-ink-soft: #575757;
+  --color-ink-faint: #8f8f8f;
+  --color-paper: #fafaf8; /* warm off-white */
+  --color-surface: #ffffff;
+  --color-line: #e7e6e2;
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SF Mono", Menlo, Consolas,
+    monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4.5rem;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: #ffffff;
+}
+
+/* subtle scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #d8d8d4;
+  border-radius: 9999px;
+  border: 3px solid var(--color-paper);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c0c0bb;
+}
+
+/* prose (docs) — accent links, muted code */
+.prose :where(a) {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+.prose :where(a):hover {
+  text-decoration: underline;
+}
+.prose :where(code) {
+  background: #f1f1ee;
+  border-radius: 4px;
+  padding: 0.15em 0.4em;
+  font-weight: 400;
+}
+.prose :where(code)::before,
+.prose :where(code)::after {
+  content: "";
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
