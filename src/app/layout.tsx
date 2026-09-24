@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "夏淑兰 — Data · Statistics · AI",
+    default: "夏淑兰",
     template: "%s · 夏淑兰",
   },
   description:
