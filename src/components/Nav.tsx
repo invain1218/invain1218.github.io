@@ -8,6 +8,7 @@ import { site } from "@/lib/site";
 
 const links = [
   { href: "research", label: "Research" },
+  { href: "publications", label: "Publications" },
   { href: "work", label: "Work" },
   { href: "notes", label: "Notes" },
   { href: "about", label: "About" },
@@ -30,7 +31,7 @@ export default function Nav() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-7 md:flex">
+        <nav className="hidden items-center gap-6 md:flex">
           {links.map((l) => (
             <a
               key={l.href}
@@ -46,9 +47,11 @@ export default function Nav() {
         <div className="flex items-center gap-5">
           <a
             href={site.resume}
+            target="_blank"
+            rel="noopener noreferrer"
             className="group hidden items-center gap-1 text-sm font-medium transition-colors hover:text-accent md:inline-flex"
           >
-            Resume
+            Résumé
             <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
           </a>
           <button
@@ -77,10 +80,12 @@ export default function Nav() {
             ))}
             <a
               href={site.resume}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setOpen(false)}
               className="flex items-center gap-1 py-3 text-base font-medium transition-colors hover:text-accent"
             >
-              Resume <ArrowUpRight className="h-4 w-4" />
+              Résumé <ArrowUpRight className="h-4 w-4" />
             </a>
           </nav>
         </div>

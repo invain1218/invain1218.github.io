@@ -91,3 +91,14 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* 打印（简历导出 PDF）—— 隐藏导航与页脚 */
+@media print {
+  header,
+  footer {
+    display: none;
+  }
+  body {
+    background: #ffffff;
+  }
+}

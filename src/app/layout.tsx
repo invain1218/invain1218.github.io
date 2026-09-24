@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "林晓 — Data · Statistics · AI",
-    template: "%s · 林晓",
+    default: "夏淑兰 — Data · Statistics · AI",
+    template: "%s · 夏淑兰",
   },
   description:
     "Personal research lab — statistical modeling, causal inference, machine learning, and computational research.",

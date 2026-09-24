@@ -32,9 +32,11 @@ export default function About() {
         ))}
         <a
           href={site.resume}
+          target="_blank"
+          rel="noopener noreferrer"
           className="group flex items-center justify-between border-b border-line py-3 text-base transition-colors hover:text-accent"
         >
-          Resume
+          Résumé
           <span className="text-ink-faint transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
             ↗
           </span>

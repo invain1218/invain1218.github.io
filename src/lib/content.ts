@@ -10,12 +10,12 @@ export interface ResearchArea {
 
 export const research: ResearchArea[] = [
   {
-    id: "stat-modeling",
+    id: "psycho",
     number: "01",
-    title: "Statistical Modeling",
-    tags: "SEM · Latent · Psychometrics",
+    title: "Psychometrics",
+    tags: "CTT · IRT · CDM",
     summary:
-      "Latent variable models, structural equation modeling, and psychometric methods for measurement and theory testing.",
+      "Classical Test Theory, Item Response Theory, and Cognitive Diagnostic Models for test construction, reliability and validity analysis, parameter estimation, and latent trait modeling.",
   },
   {
     id: "causal",
@@ -40,14 +40,6 @@ export const research: ResearchArea[] = [
     tags: "Detection · Tracking",
     summary:
       "Image processing, object detection, and tracking for visual analytics.",
-  },
-  {
-    id: "stat-comp",
-    number: "05",
-    title: "Statistical Computing",
-    tags: "R · Python",
-    summary:
-      "Statistical software, reproducible pipelines, and tools that turn methods into usable products.",
   },
 ];
 
@@ -104,42 +96,58 @@ export const projects: Project[] = [
   },
 ];
 
-export interface Note {
+export interface NoteCategory {
   id: string;
   title: string;
-  category: string;
   description: string;
-  href: string;
 }
 
-/** 首页 NOTES 区块 —— 指向文档。与 content/docs 的 frontmatter 对应。 */
-export const featuredNotes: Note[] = [
+/** 首页 NOTES 区块 —— 笔记分类。分类名对应 md 文件 frontmatter 里的 category 字段。 */
+export const noteCategories: NoteCategory[] = [
   {
     id: "statistics",
     title: "Statistics",
-    category: "Notes",
     description: "Estimation, inference, and the models behind the models.",
-    href: "/docs/design-system",
   },
   {
-    id: "causal-notes",
+    id: "causal-inference",
     title: "Causal Inference",
-    category: "Notes",
     description: "Potential outcomes, DAGs, and identification.",
-    href: "/docs/adding-docs",
   },
   {
-    id: "ml-notes",
+    id: "machine-learning",
     title: "Machine Learning",
-    category: "Notes",
     description: "Prediction, generalization, and the practical bits.",
-    href: "/docs/getting-started",
   },
   {
-    id: "cv-notes",
+    id: "computer-vision",
     title: "Computer Vision",
-    category: "Notes",
     description: "Detection, tracking, and visual understanding.",
-    href: "/docs/about",
+  },
+  {
+    id: "tsa-notes",
+    title: "Time Series Analysis",
+    description: "Analysis and modeling of time-dependent data.",
+  },
+];
+
+export interface Publication {
+  id: string;
+  title: string;
+  authors: string;
+  venue: string;
+  year: string;
+  href: string;
+}
+
+/* 发表的文章*/
+export const publications: Publication[] = [
+  {
+    id: "pub-1",
+    title: "Assessing concept mapping competence using item expansion‐based diagnostic classification analysis",
+    authors: "Shulan Xia, Peida Zhan, Kennedy Kam Ho Chan, Lijun Wang",
+    venue: "Journal of Research in Science Teaching",
+    year: "2023",
+    href: "https://doi.org/10.1002/tea.21897",
   },
 ];

@@ -10,6 +10,7 @@ export interface DocMeta {
   description?: string;
   date?: string;
   tags?: string[];
+  category?: string;
 }
 
 function asString(value: unknown): string {
@@ -41,6 +42,7 @@ export function getAllDocs(): DocMeta[] {
       description: asString(data.description),
       date: asString(data.date),
       tags: asStringArray(data.tags),
+      category: asString(data.category),
     };
   });
 
@@ -60,6 +62,7 @@ export function getDocBySlug(slug: string) {
       description: asString(data.description),
       date: asString(data.date),
       tags: asStringArray(data.tags),
+      category: asString(data.category),
     } as Omit<DocMeta, "slug">,
     content,
   };

@@ -2,6 +2,7 @@
 title: 如何新增文档
 description: 三步新增一篇 Markdown 文档，自动出现在 /docs。
 date: 2026-01-18
+category: "Guides"
 tags: ["指南", "MDX"]
 ---
 
@@ -17,11 +18,20 @@ tags: ["指南", "MDX"]
 title: 我的文档标题
 description: 一句话简介（会显示在列表里）
 date: 2026-01-20
+category: "Causal Inference"
 tags: ["标签一", "标签二"]
 ---
 ```
 
 3. 下面直接写 Markdown / MDX 正文。
+
+## 分类（category）
+
+`category` 决定文章归到哪个主题分组——`/docs` 目录会按它分组，首页 Notes 也对应到该分类。
+
+- 值要和 `src/lib/content.ts` 里 `noteCategories` 的 `title` 一致（如 `"Causal Inference"`、`"Statistics"`）；
+- 不写 `category` 会归到「未分类」；
+- 想加新分类：先在 `noteCategories` 加一条（标题 + 描述），再在文章 frontmatter 写同样的 `category`。
 
 ## 支持的语法
 
@@ -40,6 +50,7 @@ tags: ["标签一", "标签二"]
 | `title` | 文档标题 |
 | `description` | 列表页显示的一句话简介 |
 | `date` | 日期（用于排序） |
+| `category` | 分类（可选），归到哪个主题下，如 `"Causal Inference"` |
 | `tags` | 标签数组 |
 
 > 提示：文件名即 URL 的 `slug`，重复会覆盖；日期用于倒序排列。

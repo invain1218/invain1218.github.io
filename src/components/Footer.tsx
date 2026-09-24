@@ -19,8 +19,13 @@ export default function Footer() {
               {s.label}
             </a>
           ))}
-          <a href={site.resume} className="transition-colors hover:text-accent">
-            Resume
+          <a
+            href={site.resume}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-colors hover:text-accent"
+          >
+            Résumé
           </a>
         </div>
       </div>
