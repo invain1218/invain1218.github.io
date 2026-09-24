@@ -1,8 +1,3 @@
-# Lin · 林晓 — Personal Research Lab
-
-个人研究主页。定位：**Personal Research Lab × Data × Statistics × AI × Engineering**。
-
-视觉方向：**Editorial / Technical / Minimal** —— 暖白纸底、近黑字、单一电光蓝 accent、等宽字体做编号与标签、大量留白、编号列表。**Next.js + TypeScript + Tailwind CSS**，文档用 **Markdown/MDX** 管理，桌面 / 平板 / 移动端全响应式。
 
 ## 技术栈
 
@@ -23,11 +18,39 @@ npm run dev        # http://localhost:3000
 ```
 
 ```bash
-npm run build      # 生成静态产物
+npm run build      # 静态导出到 out/
 npm run start      # 预览生产版本
 ```
 
-部署到 Vercel 直接导入仓库即可。
+## 部署到 GitHub Pages
+
+本项目已配置为**静态导出**（`output: "export"`）+ 自动部署 workflow，开箱即用。
+
+### 方式一：用户站（`username.github.io`，推荐）
+
+1. 在 GitHub 新建仓库，名字必须是 **`<你的用户名>.github.io`**；
+2. 把代码推到该仓库的 `main` 分支；
+3. 仓库 Settings → Pages → Source 选 **`GitHub Actions`**；
+4. 之后每次 `git push`，`.github/workflows/deploy.yml` 会自动构建并部署；
+5. 访问 `https://<你的用户名>.github.io/`。
+
+### 方式二：项目站（`username.github.io/<仓库名>/`）
+
+1. 新建任意名字的仓库，推到 `main`；
+2. 在 `next.config.ts` 里取消注释并填仓库名：`basePath: "/<仓库名>"`；
+3. Pages Source 选 **`GitHub Actions`**；
+4. 访问 `https://<你的用户名>.github.io/<仓库名>/`。
+
+> `next.config.ts` 里的 `basePath` 已经写好注释，改一行即可。`.nojekyll` 已包含，避免 GitHub Pages 的 Jekyll 忽略 `_next/` 资源。
+
+### 本地验证静态产物
+
+```bash
+npm run build
+npx serve out      # 或 python -m http.server 8000 -d out
+```
+
+部署到 Vercel / Netlify 也直接可用（导入仓库即可）。
 
 ## 信息架构
 
