@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import { ArrowLeft } from "lucide-react";
+import type { Metadata } from "next";
 import { getAllDocs, getDocBySlug } from "@/lib/docs";
 import Container from "@/components/Container";
 
@@ -14,11 +15,15 @@ export async function generateMetadata({
   params,
 }: {
   params: Promise<{ slug: string }>;
-}) {
+}): Promise<Metadata> {
   const { slug } = await params;
   try {
     const { meta } = getDocBySlug(slug);
-    return { title: meta.title };
+    return {
+      title: meta.title,
+      description: meta.description || meta.abstract,
+      keywords: meta.keywords,
+    };
   } catch {
     return { title: "Notes" };
   }
@@ -53,9 +58,9 @@ export default async function DocPage({
         <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
           {meta.title}
         </h1>
-        {meta.description ? (
+        {meta.abstract || meta.description ? (
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-ink-soft">
-            {meta.description}
+            {meta.abstract || meta.description}
           </p>
         ) : null}
         <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-1 font-mono text-xs text-ink-faint">

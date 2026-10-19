@@ -8,6 +8,8 @@ export interface DocMeta {
   slug: string;
   title: string;
   description?: string;
+  abstract?: string;
+  keywords?: string[];
   date?: string;
   tags?: string[];
   category?: string;
@@ -40,6 +42,8 @@ export function getAllDocs(): DocMeta[] {
       slug,
       title: (data.title as string) ?? slug,
       description: asString(data.description),
+      abstract: asString(data.abstract),
+      keywords: asStringArray(data.keywords),
       date: asString(data.date),
       tags: asStringArray(data.tags),
       category: asString(data.category),
@@ -60,6 +64,8 @@ export function getDocBySlug(slug: string) {
     meta: {
       title: (data.title as string) ?? slug,
       description: asString(data.description),
+      abstract: asString(data.abstract),
+      keywords: asStringArray(data.keywords),
       date: asString(data.date),
       tags: asStringArray(data.tags),
       category: asString(data.category),
