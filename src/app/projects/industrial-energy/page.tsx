@@ -91,10 +91,10 @@ export default function IndustrialEnergyProjectPage() {
                 energy difference is not significant (p = 0.955).
               </li>
               <li>
-                The offline policy results are not field measurements. The source
-                deck contains both 23% and 27%–30% savings figures without a
-                reconciled calculation basis, so neither is presented here as a
-                validated saving rate. A controlled online A/B test is needed.
+                The offline policy evaluation estimated an 11.3% energy saving
+                from historical operating sequences. This is not a field
+                measurement or a verified realized saving; a controlled online
+                A/B test is needed before deployment.
               </li>
             </ul>
           </section>
