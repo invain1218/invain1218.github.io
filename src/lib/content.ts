@@ -72,17 +72,8 @@ export const projects: Project[] = [
     href: "#",
   },
   {
-    id: "stat-software",
-    number: "03",
-    title: "Statistical Software",
-    year: "2024 —",
-    description:
-      "A node-based statistical workflow tool — turning R methods into usable, repeatable pipelines.",
-    href: "#",
-  },
-  {
     id: "cv-project",
-    number: "04",
+    number: "03",
     title: "Smart Traffic Video Analytics",
     year: "2023 — 2024",
     description:

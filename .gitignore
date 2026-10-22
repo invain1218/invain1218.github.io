@@ -48,3 +48,6 @@ next-env.d.ts
 # Large local traffic demo masters; optimized web copies live under public/videos/
 content/docs/Trafficyolo/*.mp4
 
+# Local presentation review artifacts and original backup
+.codex-ppt-review/
+
