@@ -59,8 +59,8 @@ export const projects: Project[] = [
     title: "Industrial Energy Optimization",
     year: "2025 — 2026",
     description:
-      "Predictive modeling and control-oriented optimization for industrial chilled-water systems.",
-    href: "#",
+      "Historical analysis and offline control evaluation for chilled-water pump operation and system energy use.",
+    href: "/projects/industrial-energy",
   },
   {
     id: "structural",
