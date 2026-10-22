@@ -14,10 +14,7 @@ export default function Projects() {
               <h3 className="text-xl font-semibold tracking-tight transition-colors duration-200 group-hover:text-accent sm:text-2xl">
                 {p.title}
               </h3>
-              <p className="mt-1.5 font-mono text-xs uppercase tracking-[0.12em] text-ink-faint">
-                {p.tags.join(" · ")}
-              </p>
-              <p className="mt-4 max-w-2xl text-base leading-relaxed text-ink-soft">
+              <p className="mt-3 max-w-2xl text-base leading-relaxed text-ink-soft">
                 {p.description}
               </p>
             </div>

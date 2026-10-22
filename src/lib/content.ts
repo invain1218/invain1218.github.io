@@ -47,7 +47,6 @@ export interface Project {
   id: string;
   number: string;
   title: string;
-  tags: string[];
   year: string;
   description: string;
   href: string;
@@ -58,7 +57,6 @@ export const projects: Project[] = [
     id: "energy",
     number: "01",
     title: "Industrial Energy Optimization",
-    tags: ["TSMixer", "Time Series", "Optimization"],
     year: "2025 — 2026",
     description:
       "Predictive modeling and control-oriented optimization for industrial chilled-water systems.",
@@ -67,18 +65,16 @@ export const projects: Project[] = [
   {
     id: "structural",
     number: "02",
-    title: "Structural Monitoring",
-    tags: ["Anomaly Detection", "Time Series"],
+    title: "Dam Anomaly Detection",
     year: "2024 — 2025",
     description:
-      "Time-series anomaly detection for structural health monitoring and early warning.",
+      "Anomaly detection for dam monitoring time series to identify unusual structural behavior and support early warning.",
     href: "#",
   },
   {
     id: "stat-software",
     number: "03",
     title: "Statistical Software",
-    tags: ["R", "Workflow", "Plugin"],
     year: "2024 —",
     description:
       "A node-based statistical workflow tool — turning R methods into usable, repeatable pipelines.",
@@ -88,7 +84,6 @@ export const projects: Project[] = [
     id: "cv-project",
     number: "04",
     title: "Smart Traffic Video Analytics",
-    tags: ["YOLO", "DeepSORT", "Video Analytics"],
     year: "2023 — 2024",
     description:
       "基于 YOLO 与多目标跟踪的道路监控项目，涵盖 ROI 场景配置、车辆检测跟踪和多路视频监控。",
