@@ -87,12 +87,12 @@ export const projects: Project[] = [
   {
     id: "cv-project",
     number: "04",
-    title: "Computer Vision",
+    title: "Smart Traffic Video Analytics",
     tags: ["YOLO", "DeepSORT", "Video Analytics"],
     year: "2023 — 2024",
     description:
-      "Object detection and multi-object tracking for video analytics pipelines.",
-    href: "#",
+      "基于 YOLO 与多目标跟踪的道路监控项目，涵盖 ROI 场景配置、车辆检测跟踪和多路视频监控。",
+    href: "/projects/smart-traffic",
   },
 ];
 
