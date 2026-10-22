@@ -45,3 +45,6 @@ next-env.d.ts
 *.sln
 *.slnx
 
+# Large local traffic demo masters; optimized web copies live under public/videos/
+content/docs/Trafficyolo/*.mp4
+
